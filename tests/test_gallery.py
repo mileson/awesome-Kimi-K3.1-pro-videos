@@ -1,4 +1,6 @@
 import importlib.util
+import sys
+sys.path.insert(0,str(__import__("pathlib").Path(__file__).parents[1]/"scripts"))
 import json
 from pathlib import Path
 import tempfile
@@ -31,3 +33,26 @@ class CatalogTests(unittest.TestCase):
             with patch.object(g,'run',side_effect=AssertionError('must reuse')): self.assertEqual(g.frame(row),target)
 
 if __name__=='__main__': unittest.main()
+
+class SiteFeedTests(unittest.TestCase):
+    def test_feed_is_deterministic_and_does_not_invent_media_or_remakes(self):
+        import site_export
+        rows=g.load()
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);(root/'data').mkdir()
+            (root/'data/site.json').write_text('{"gallery_url":null,"skills_url":"https://skillu.dev/skills/"}')
+            a=site_export.feed(root,rows);before=(root/'data/site-feed.json').read_bytes()
+            b=site_export.feed(root,rows)
+            self.assertEqual(before,(root/'data/site-feed.json').read_bytes())
+            self.assertEqual(sum(x['count'] for x in a['categories']),len(rows))
+            self.assertTrue(all(v['video_url'] is None and v['remake'] is None for v in a['videos']))
+            self.assertEqual(a['counts']['prompts'],2)
+
+    def test_website_deep_links_only_after_route_is_configured(self):
+        import site_export
+        rows=g.load()
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);(root/'data').mkdir()
+            (root/'data/site.json').write_text('{"gallery_url":"https://skillu.dev/ai-videos/kimi-k3-1-pro/","skills_url":"https://skillu.dev/skills/"}')
+            result=site_export.feed(root,rows)
+            self.assertEqual(result['videos'][0]['website_url'],'https://skillu.dev/ai-videos/kimi-k3-1-pro/#robotic-hand')

@@ -10,6 +10,7 @@ import re
 import subprocess
 import sys
 from PIL import Image, ImageOps, ImageDraw
+from site_export import feed, bundle, GROUPS, MAP
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data/videos.json'
@@ -87,6 +88,7 @@ def render(rows):
                 wall.paste(ImageOps.pad(im.convert('RGB'), (w-12, 258), color='#10131b'), (x+6,y+6))
             draw.text((x+12,y+273), f"{i+1:02}  @{row['author']}", fill='white')
         wall.save(ROOT/'assets/wall.jpg', quality=88)
+    feed(ROOT, rows)
     text = '''# Awesome Kimi K3.1 Pro Videos
 
 收集用 Kimi K3.1 Pro 制作的动画、3D 场景与视频，保留作者原帖和公开提示词。点击预览观看原视频。
@@ -97,17 +99,32 @@ def render(rows):
     text += f"已收录 **{len(rows)}** 个作品，其中 **{sum(bool(r.get('prompt')) for r in rows)}** 个有公开的完整或部分提示词。\n\n"
     if ready:
         text += '## 视频帧图片墙\n\n![Kimi K3.1 Pro 视频帧合集](assets/wall.jpg)\n\n'
-    text += '## 作品索引\n\n<table>\n'
-    for i,row in enumerate(rows):
-        if i%3 == 0: text += '<tr>\n'
-        slug = row['slug']; url = row['post_url']
-        label = html.escape(row['title'])
-        preview = f'<img src="assets/frames/{slug}.jpg" width="280" alt="{label}">' if row in ready else '观看视频'
-        text += f'<td width="33%" valign="top"><a href="{url}">{preview}</a><br><b>{label}</b><br><a href="https://x.com/{row["author"]}">@{row["author"]}</a> · {html.escape(row["category"])}<br><a href="prompts/{slug}.md">作品与提示词</a></td>\n'
-        if i%3 == 2 or i == len(rows)-1: text += '</tr>\n'
-    text += '''</table>
-
-## 添加作品与重新生成
+    config=json.loads((ROOT/'data/site.json').read_text())
+    destination=config.get('gallery_url') or config['skills_url']
+    tracked=destination+'?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos'
+    text=text.replace('![Kimi K3.1 Pro 视频帧合集](assets/wall.jpg)', '[![Kimi K3.1 Pro 视频帧合集](assets/wall.jpg)]('+tracked+')')
+    text += '[浏览 SkillU 视频合集]('+tracked+')\n\n' if config.get('gallery_url') else '[在 SkillU 浏览可获取的 Skill]('+tracked+')\n\n'
+    text += '## 目录\n\n'
+    for key,zh,en in GROUPS:
+        count=sum(MAP[r['category']]==key for r in rows)
+        if count:text += f'- [{zh}](#{key}) · {count}\n'
+    text += '- [使用提示词](#使用提示词)\n- [添加作品与重新生成](#添加作品与重新生成)\n\n'
+    for key,zh,en in GROUPS:
+        group=[r for r in rows if MAP[r['category']]==key]
+        if not group:continue
+        text += f'<a id="{key}"></a>\n\n## {zh}\n\n<table>\n'
+        for i,row in enumerate(group):
+            if i%3==0:text += '<tr>\n'
+            slug=row['slug']; label=html.escape(row['title']);url=row['post_url']
+            card=(config.get('gallery_url')+'?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#'+slug) if config.get('gallery_url') else url
+            preview=f'<img src="assets/frames/{slug}.jpg" width="100%" alt="{label}">' if row in ready else '观看视频'
+            status={'full':'完整 Prompt','partial':'Prompt 片段','not-shared':'作品说明'}[row['prompt_status']]
+            text+=f'<td width="33%" valign="top"><a href="{card}">{preview}</a><br><b>{label}</b><br><a href="{url}">@{row["author"]}</a> · <a href="prompts/{slug}.md">{status}</a><br><sub>{html.escape(row["description"])}</sub></td>\n'
+            if i%3==2 or i==len(group)-1:text+='</tr>\n'
+        text+='</table>\n\n'
+    text+='## 使用提示词\n\n打开标有完整 Prompt 或 Prompt 片段的作品页，复制作者公开的内容，交给运行 Kimi K3.1 Pro 的 Agent。根据作品需要准备素材和运行环境，再预览、调整与导出。需要额外视频工具的流程会在作品页标注。\n\n'
+    text+='[查看 SkillU 的相关 Skill]('+config['skills_url']+') · [网站导出数据](data/site-feed.json)\n\n'
+    text += '''## 添加作品与重新生成
 
 需要 Python 3.10+、FFmpeg 和 ffprobe。视频缓存在本地 `.cache/`，仓库只保存抽取的预览帧和目录。
 
@@ -148,10 +165,13 @@ python3 -m venv .venv
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['build','render','validate'])
+    parser.add_argument('command', choices=['build','render','validate','export-site'])
+    parser.add_argument('--output',default='.cache/skillu-import');
     parser.add_argument('--only'); parser.add_argument('--force', action='store_true')
     args = parser.parse_args(); rows=load()
     if args.only and args.only not in {r['slug'] for r in rows}: parser.error('Unknown slug')
+    if args.command=='export-site':
+        print(bundle(ROOT,rows,ROOT/args.output));return 0
     failures=[]
     if args.command=='build':
         for row in rows:
