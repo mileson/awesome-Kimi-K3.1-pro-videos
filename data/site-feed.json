@@ -16,7 +16,7 @@
       "id": "3d",
       "label_zh": "3D 场景",
       "label_en": "3D scenes",
-      "count": 1
+      "count": 3
     },
     {
       "id": "games",
@@ -28,7 +28,7 @@
       "id": "video",
       "label_zh": "视频工作流",
       "label_en": "Video workflows",
-      "count": 1
+      "count": 2
     },
     {
       "id": "official",
@@ -38,7 +38,7 @@
     }
   ],
   "counts": {
-    "videos": 6,
+    "videos": 9,
     "prompts": 2,
     "remakes": 0
   },
@@ -263,6 +263,114 @@
         "provider": "x",
         "post_url": "https://x.com/renoiseai/status/2113689744014209045"
       },
+      "remake": null
+    },
+    {
+      "slug": "changi-airport",
+      "title": "新加坡樟宜机场 Blender 建模",
+      "title_en": "Singapore Changi Airport in Blender",
+      "author": "crystalsssup",
+      "post_url": "https://x.com/crystalsssup/status/2113698280991580577",
+      "category": "3D",
+      "description": "Kimi K3.1 Pro 在 Blender 中完成樟宜机场场景建模、场景组装与渲染。",
+      "description_en": "A Singapore Changi Airport scene built in Blender, from 3D assets and trees to scene assembly and rendering.",
+      "model": "Kimi K3.1 Pro",
+      "model_evidence": "作者原帖明确标注 Kimi K3.1 Pro。",
+      "model_evidence_en": "The creator explicitly identifies Kimi K3.1 Pro in the original post.",
+      "prompt": null,
+      "prompt_status": "not-shared",
+      "prompt_source": null,
+      "note": null,
+      "note_en": "The creator notes that the Tripo plugin can add detail to the scene.",
+      "added": "2026-10-24",
+      "checked": "2026-10-24",
+      "video_index": 1,
+      "frame_ratio": 0.4,
+      "category_id": "3d",
+      "post_id": "2113698280991580577",
+      "poster_url": "https://raw.githubusercontent.com/mileson/awesome-Kimi-K3.1-pro-videos/main/assets/frames/changi-airport.jpg",
+      "poster_path": "assets/frames/changi-airport.jpg",
+      "prompt_url": "https://github.com/mileson/awesome-Kimi-K3.1-pro-videos/blob/main/prompts/changi-airport.md",
+      "website_url": "https://skillu.dev/ai-videos/kimi-k3-1-pro/#changi-airport",
+      "video_url": null,
+      "video_path": "videos/changi-airport.mp4",
+      "playback": {
+        "provider": "x",
+        "post_url": "https://x.com/crystalsssup/status/2113698280991580577"
+      },
+      "related_skills": [],
+      "remake": null
+    },
+    {
+      "slug": "stained-glass-butterfly",
+      "title": "彩色玻璃蝴蝶",
+      "title_en": "Stained-Glass Butterfly",
+      "author": "ivanainai",
+      "post_url": "https://x.com/ivanainai/status/2113775873786794218",
+      "category": "3D",
+      "description": "同一提示词下，Kimi K3.1 Pro 与 Opus 5.5 的交互式彩玻璃蝴蝶对比。",
+      "description_en": "An interactive 3D stained-glass butterfly, compared with an Opus 5.5 version made from the same prompt.",
+      "model": "Kimi K3.1 Pro",
+      "model_evidence": "作者原帖明确标注 Kimi K3.1 Pro。",
+      "model_evidence_en": "The creator explicitly identifies Kimi K3.1 Pro in the original post.",
+      "prompt": null,
+      "prompt_status": "not-shared",
+      "prompt_source": null,
+      "note": null,
+      "note_en": null,
+      "added": "2026-10-24",
+      "checked": "2026-10-24",
+      "video_index": 1,
+      "frame_ratio": 0.4,
+      "category_id": "3d",
+      "post_id": "2113775873786794218",
+      "poster_url": "https://raw.githubusercontent.com/mileson/awesome-Kimi-K3.1-pro-videos/main/assets/frames/stained-glass-butterfly.jpg",
+      "poster_path": "assets/frames/stained-glass-butterfly.jpg",
+      "prompt_url": "https://github.com/mileson/awesome-Kimi-K3.1-pro-videos/blob/main/prompts/stained-glass-butterfly.md",
+      "website_url": "https://skillu.dev/ai-videos/kimi-k3-1-pro/#stained-glass-butterfly",
+      "video_url": null,
+      "video_path": "videos/stained-glass-butterfly.mp4",
+      "playback": {
+        "provider": "x",
+        "post_url": "https://x.com/ivanainai/status/2113775873786794218"
+      },
+      "related_skills": [],
+      "remake": null
+    },
+    {
+      "slug": "claude-code-trailer",
+      "title": "Claude Code 预告片",
+      "title_en": "Trailer for Claude Code",
+      "author": "ChrisGPT",
+      "post_url": "https://x.com/ChrisGPT/status/2113796109722153067",
+      "category": "视频创作",
+      "description": "使用 Kimi K3.1 Pro 制作的 Claude Code 预告片。",
+      "description_en": "A Claude Code trailer made with Kimi K3.1 Pro.",
+      "model": "Kimi K3.1 Pro",
+      "model_evidence": "作者原帖明确标注 Kimi K3.1 Pro。",
+      "model_evidence_en": "The creator explicitly identifies Kimi K3.1 Pro in the original post.",
+      "prompt": null,
+      "prompt_status": "not-shared",
+      "prompt_source": null,
+      "note": null,
+      "note_en": "The post compares the result with an Opus 5.5 version.",
+      "added": "2026-10-24",
+      "checked": "2026-10-24",
+      "video_index": 1,
+      "frame_ratio": 0.4,
+      "category_id": "video",
+      "post_id": "2113796109722153067",
+      "poster_url": "https://raw.githubusercontent.com/mileson/awesome-Kimi-K3.1-pro-videos/main/assets/frames/claude-code-trailer.jpg",
+      "poster_path": "assets/frames/claude-code-trailer.jpg",
+      "prompt_url": "https://github.com/mileson/awesome-Kimi-K3.1-pro-videos/blob/main/prompts/claude-code-trailer.md",
+      "website_url": "https://skillu.dev/ai-videos/kimi-k3-1-pro/#claude-code-trailer",
+      "video_url": null,
+      "video_path": "videos/claude-code-trailer.mp4",
+      "playback": {
+        "provider": "x",
+        "post_url": "https://x.com/ChrisGPT/status/2113796109722153067"
+      },
+      "related_skills": [],
       "remake": null
     }
   ]

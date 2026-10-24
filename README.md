@@ -6,18 +6,18 @@ Videos, animations, 3D scenes, and games made with **Kimi K3.1 Pro**, with promp
 
 Pick a video, copy its prompt, and try it with your own agent.
 
-**[▶ Watch all 6 videos on SkillU](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)**
+**[▶ Watch all 9 videos on SkillU](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)**
 
-- **6** videos to browse by category
+- **9** videos to browse by category
 - **2** shared prompts in [prompts/](prompts/)
 - Every entry links to the creator’s original post
 
 ## Contents
 
 - [Motion graphics & animation](#motion) · 2
-- [3D scenes](#3d) · 1
+- [3D scenes](#3d) · 3
 - [Games & interactive](#games) · 1
-- [Video workflows](#video) · 1
+- [Video workflows](#video) · 2
 - [Official showcase](#official) · 1
 - [How to use a prompt](#how-to-use-a-prompt)
 - [Credits](#credits)
@@ -40,6 +40,8 @@ Pick a video, copy its prompt, and try it with your own agent.
 <table>
 <tr>
 <td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#robotic-hand"><img src="assets/frames/robotic-hand.jpg" width="100%" alt="Robotic Hand: 2,317 Parts"></a><br><b>Robotic Hand: 2,317 Parts</b><br><a href="https://x.com/crystalsssup/status/2113684128734625948">@crystalsssup</a> · <a href="https://x.com/crystalsssup/status/2113684128734625948">Original post</a><br><sub>An interactive 3D website showing a robotic hand being disassembled and reassembled.</sub></td>
+<td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#changi-airport"><img src="assets/frames/changi-airport.jpg" width="100%" alt="Singapore Changi Airport in Blender"></a><br><b>Singapore Changi Airport in Blender</b><br><a href="https://x.com/crystalsssup/status/2113698280991580577">@crystalsssup</a> · <a href="https://x.com/crystalsssup/status/2113698280991580577">Original post</a><br><sub>A Singapore Changi Airport scene built in Blender, from 3D assets and trees to scene assembly and rendering.</sub></td>
+<td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#stained-glass-butterfly"><img src="assets/frames/stained-glass-butterfly.jpg" width="100%" alt="Stained-Glass Butterfly"></a><br><b>Stained-Glass Butterfly</b><br><a href="https://x.com/ivanainai/status/2113775873786794218">@ivanainai</a> · <a href="https://x.com/ivanainai/status/2113775873786794218">Original post</a><br><sub>An interactive 3D stained-glass butterfly, compared with an Opus 5.5 version made from the same prompt.</sub></td>
 </tr>
 </table>
 
@@ -60,6 +62,7 @@ Pick a video, copy its prompt, and try it with your own agent.
 <table>
 <tr>
 <td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#motion-trailer"><img src="assets/frames/motion-trailer.jpg" width="100%" alt="Filmmaking with Renoise"></a><br><b>Filmmaking with Renoise</b><br><a href="https://x.com/renoiseai/status/2113693742163218695">@renoiseai</a> · <a href="https://x.com/renoiseai/status/2113693742163218695">Original post</a><br><sub>Kimi plans shots and edits a film through Renoise MCP.</sub></td>
+<td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#claude-code-trailer"><img src="assets/frames/claude-code-trailer.jpg" width="100%" alt="Trailer for Claude Code"></a><br><b>Trailer for Claude Code</b><br><a href="https://x.com/ChrisGPT/status/2113796109722153067">@ChrisGPT</a> · <a href="https://x.com/ChrisGPT/status/2113796109722153067">Original post</a><br><sub>A Claude Code trailer made with Kimi K3.1 Pro.</sub></td>
 </tr>
 </table>
 
