@@ -18,7 +18,7 @@ def feed(root, rows):
         slug=row['slug']; poster='assets/frames/'+slug+'.jpg'
         entries.append({**row,'category_id':MAP[row['category']], 'post_id':row['post_url'].rsplit('/',1)[1],
           'poster_url':RAW+'/'+poster,'poster_path':poster,
-          'prompt_url':REPO+'/blob/main/prompts/'+slug+'.md',
+          'prompt_url':REPO+'/blob/main/prompts/'+slug+'.md' if row.get('prompt') else None,
           'website_url':config.get('gallery_url')+'#'+slug if config.get('gallery_url') else None,
           'video_url':row.get('video_url'),'video_path':'videos/'+slug+'.mp4',
           'playback':{'provider':'x','post_url':row['post_url']},

@@ -5,7 +5,3 @@
 A Singapore Changi Airport scene built in Blender, from 3D assets and trees to scene assembly and rendering.
 
 The creator notes that the Tripo plugin can add detail to the scene.
-
-## Prompt
-
-The creator did not share a prompt in the original post.

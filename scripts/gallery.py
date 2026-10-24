@@ -117,7 +117,7 @@ def render(rows):
             text+=f'<td width="33%" valign="top"><a href="{card}">{preview}</a><br><b>{label}</b><br><a href="{url}">@{row["author"]}</a> · <a href="{prompt_link}">{status}</a><br><sub>{html.escape(row.get("description_en", row["description"]))}</sub></td>\n'
             if i%3==2 or i==len(group)-1:text+='</tr>\n'
         text+='</table>\n\n'
-    text += '## How to use a prompt\n\n1. Open a prompt file and copy the block under **Prompt**.\n2. Paste it into an agent running Kimi K3.1 Pro.\n3. Ask it to create the animation or scene, then preview and export the result.\n\nSome creators shared only part of their prompt or described the result in their post; those files say so.\n\n'
+    text += '## How to use a prompt\n\n1. Open a prompt file and copy the block under **Prompt**.\n2. Paste it into an agent running Kimi K3.1 Pro.\n3. Ask it to create the animation or scene, then preview and export the result.\n\n'
     text += '## Credits\n\nEvery video and prompt belongs to its creator, linked from each entry. To request a correction or removal, open an issue.\n\n'
     text += 'Browse the full collection on **[SkillU]('+tracked+')**, or [get video creation skills]('+config['skills_url']+') to make your own.\n'
     (ROOT/'README.md').write_text(text)
@@ -127,9 +127,9 @@ def render(rows):
         body = f'# {row.get("title_en", row["title"])}\n\n[Watch original video]({row["post_url"]}) · [@{row["author"]}](https://x.com/{row["author"]})\n\n'
         body += f'{row.get("description_en", row["description"])}\n\n'
         if row.get('note_en'): body += row['note_en']+'\n\n'
-        body += '## Prompt\n\n'
-        body += (('Full prompt shared by the creator' if row['prompt_status']=='full' else 'Prompt excerpt shared by the creator')+'\n\n````text\n'+prompt+'\n````\n\n[Prompt source]('+row['prompt_source']+')\n') if prompt else 'The creator did not share a prompt in the original post.\n'
-        (ROOT/'prompts'/(row['slug']+'.md')).write_text(body)
+        if prompt: body += '## Prompt\n\n'
+        body += (('Full prompt shared by the creator' if row['prompt_status']=='full' else 'Prompt excerpt shared by the creator')+'\n\n````text\n'+prompt+'\n````\n\n[Prompt source]('+row['prompt_source']+')\n') if prompt else ''
+        (ROOT/'prompts'/(row['slug']+'.md')).write_text(body.rstrip()+'\n')
 
 
 def main():

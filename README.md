@@ -82,8 +82,6 @@ Pick a video, copy its prompt, and try it with your own agent.
 2. Paste it into an agent running Kimi K3.1 Pro.
 3. Ask it to create the animation or scene, then preview and export the result.
 
-Some creators shared only part of their prompt or described the result in their post; those files say so.
-
 ## Credits
 
 Every video and prompt belongs to its creator, linked from each entry. To request a correction or removal, open an issue.
