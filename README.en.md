@@ -1,6 +1,6 @@
 # Awesome Kimi K3.1 Pro Videos
 
-Browse [the visual gallery](README.md) for Kimi K3.1 Pro animations, 3D scenes, and video workflows. Each entry links to its creator's original X post and records whether a prompt is fully shared, partially shared, or not shared.
+Watch [the videos on SkillU](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos) or browse [the GitHub gallery](README.md) for Kimi K3.1 Pro animations, 3D scenes, and video workflows. Each entry links to its creator's original X post and records whether a prompt is fully shared, partially shared, or not shared.
 
 ## Rebuild the gallery
 

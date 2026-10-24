@@ -2,7 +2,7 @@
   "schema_version": 1,
   "title": "Kimi K3.1 Pro Videos",
   "repository_url": "https://github.com/mileson/awesome-Kimi-K3.1-pro-videos",
-  "gallery_url": null,
+  "gallery_url": "https://skillu.dev/ai-videos/kimi-k3-1-pro/",
   "skills_url": "https://skillu.dev/skills/",
   "updated": "2026-10-24",
   "categories": [
@@ -65,7 +65,7 @@
       "poster_url": "https://raw.githubusercontent.com/mileson/awesome-Kimi-K3.1-pro-videos/main/assets/frames/robotic-hand.jpg",
       "poster_path": "assets/frames/robotic-hand.jpg",
       "prompt_url": "https://github.com/mileson/awesome-Kimi-K3.1-pro-videos/blob/main/prompts/robotic-hand.md",
-      "website_url": null,
+      "website_url": "https://skillu.dev/ai-videos/kimi-k3-1-pro/#robotic-hand",
       "video_url": null,
       "video_path": "videos/robotic-hand.mp4",
       "playback": {
@@ -97,7 +97,7 @@
       "poster_url": "https://raw.githubusercontent.com/mileson/awesome-Kimi-K3.1-pro-videos/main/assets/frames/pelican-bicycle.jpg",
       "poster_path": "assets/frames/pelican-bicycle.jpg",
       "prompt_url": "https://github.com/mileson/awesome-Kimi-K3.1-pro-videos/blob/main/prompts/pelican-bicycle.md",
-      "website_url": null,
+      "website_url": "https://skillu.dev/ai-videos/kimi-k3-1-pro/#pelican-bicycle",
       "video_url": null,
       "video_path": "videos/pelican-bicycle.mp4",
       "playback": {
@@ -129,7 +129,7 @@
       "poster_url": "https://raw.githubusercontent.com/mileson/awesome-Kimi-K3.1-pro-videos/main/assets/frames/spider-city.jpg",
       "poster_path": "assets/frames/spider-city.jpg",
       "prompt_url": "https://github.com/mileson/awesome-Kimi-K3.1-pro-videos/blob/main/prompts/spider-city.md",
-      "website_url": null,
+      "website_url": "https://skillu.dev/ai-videos/kimi-k3-1-pro/#spider-city",
       "video_url": null,
       "video_path": "videos/spider-city.mp4",
       "playback": {
@@ -161,7 +161,7 @@
       "poster_url": "https://raw.githubusercontent.com/mileson/awesome-Kimi-K3.1-pro-videos/main/assets/frames/official-showcase.jpg",
       "poster_path": "assets/frames/official-showcase.jpg",
       "prompt_url": "https://github.com/mileson/awesome-Kimi-K3.1-pro-videos/blob/main/prompts/official-showcase.md",
-      "website_url": null,
+      "website_url": "https://skillu.dev/ai-videos/kimi-k3-1-pro/#official-showcase",
       "video_url": null,
       "video_path": "videos/official-showcase.mp4",
       "playback": {
@@ -193,7 +193,7 @@
       "poster_url": "https://raw.githubusercontent.com/mileson/awesome-Kimi-K3.1-pro-videos/main/assets/frames/motion-trailer.jpg",
       "poster_path": "assets/frames/motion-trailer.jpg",
       "prompt_url": "https://github.com/mileson/awesome-Kimi-K3.1-pro-videos/blob/main/prompts/motion-trailer.md",
-      "website_url": null,
+      "website_url": "https://skillu.dev/ai-videos/kimi-k3-1-pro/#motion-trailer",
       "video_url": null,
       "video_path": "videos/motion-trailer.mp4",
       "playback": {
@@ -220,19 +220,25 @@
       "video_index": 1,
       "frame_ratio": 0.4,
       "note": "通过 Renoise AI 完成的动态图形作品。",
+      "related_skills": [
+        {
+          "slug": "kinetic-title-video",
+          "name": "Kinetic Title Video",
+          "url": "https://skillu.dev/skills/kinetic-title-video/"
+        }
+      ],
       "category_id": "motion",
       "post_id": "2113689744014209045",
       "poster_url": "https://raw.githubusercontent.com/mileson/awesome-Kimi-K3.1-pro-videos/main/assets/frames/motion-with-intent.jpg",
       "poster_path": "assets/frames/motion-with-intent.jpg",
       "prompt_url": "https://github.com/mileson/awesome-Kimi-K3.1-pro-videos/blob/main/prompts/motion-with-intent.md",
-      "website_url": null,
+      "website_url": "https://skillu.dev/ai-videos/kimi-k3-1-pro/#motion-with-intent",
       "video_url": null,
       "video_path": "videos/motion-with-intent.mp4",
       "playback": {
         "provider": "x",
         "post_url": "https://x.com/renoiseai/status/2113689744014209045"
       },
-      "related_skills": [],
       "remake": null
     }
   ]

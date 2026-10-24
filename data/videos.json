@@ -105,6 +105,13 @@
     "checked": "2026-10-24",
     "video_index": 1,
     "frame_ratio": 0.4,
-    "note": "通过 Renoise AI 完成的动态图形作品。"
+    "note": "通过 Renoise AI 完成的动态图形作品。",
+    "related_skills": [
+      {
+        "slug": "kinetic-title-video",
+        "name": "Kinetic Title Video",
+        "url": "https://skillu.dev/skills/kinetic-title-video/"
+      }
+    ]
   }
 ]
