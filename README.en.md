@@ -2,21 +2,82 @@
 
 [![Kimi K3.1 Pro videos](assets/wall.jpg)](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)
 
-Watch [the videos on SkillU](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos) or browse [the GitHub gallery](README.md) for Kimi K3.1 Pro animations, 3D scenes, and video workflows. Pick a work, copy the creator’s prompt, and try it with your own agent.
+Videos, animations, 3D scenes, and games made with **Kimi K3.1 Pro**, with prompts shared by their creators and links to the original posts.
 
-## Browse by format
+Pick a video, copy its prompt, and try it with your own agent.
 
-- [Motion graphics & animation](README.md#motion)
-- [3D scenes](README.md#3d)
-- [Games & interactive](README.md#games)
-- [Video workflows](README.md#video)
-- [Official showcase](README.md#official)
+**[▶ Watch all 6 videos on SkillU](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)**
+
+- **6** videos to browse by category
+- **2** shared prompts in [prompts/](prompts/)
+- Every entry links to the creator’s original post
+
+## Contents
+
+- [Motion graphics & animation](#motion) · 2
+- [3D scenes](#3d) · 1
+- [Games & interactive](#games) · 1
+- [Video workflows](#video) · 1
+- [Official showcase](#official) · 1
+- [How to use a prompt](#how-to-use-a-prompt)
+- [Credits](#credits)
+
+<a id="motion"></a>
+
+## Motion graphics & animation
+
+<table>
+<tr>
+<td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#pelican-bicycle"><img src="assets/frames/pelican-bicycle.jpg" width="100%" alt="Pelican Riding a Bicycle"></a><br><b>Pelican Riding a Bicycle</b><br><a href="https://x.com/zstmfhy/status/2113804589174862231">@zstmfhy</a> · <a href="prompts/pelican-bicycle.md">Prompt</a><br><sub>An SVG pelican cycling animation, comparing standard and extreme modes.</sub></td>
+<td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#motion-with-intent"><img src="assets/frames/motion-with-intent.jpg" width="100%" alt="Motion With Intent"></a><br><b>Motion With Intent</b><br><a href="https://x.com/renoiseai/status/2113689744014209045">@renoiseai</a> · <a href="prompts/motion-with-intent.md">Prompt</a><br><sub>A 15-second motion graphics piece exploring rhythm, easing, morphing, and contrast.</sub></td>
+</tr>
+</table>
+
+<a id="3d"></a>
+
+## 3D scenes
+
+<table>
+<tr>
+<td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#robotic-hand"><img src="assets/frames/robotic-hand.jpg" width="100%" alt="Robotic Hand: 2,317 Parts"></a><br><b>Robotic Hand: 2,317 Parts</b><br><a href="https://x.com/crystalsssup/status/2113684128734625948">@crystalsssup</a> · <a href="https://x.com/crystalsssup/status/2113684128734625948">Original post</a><br><sub>An interactive 3D website showing a robotic hand being disassembled and reassembled.</sub></td>
+</tr>
+</table>
+
+<a id="games"></a>
+
+## Games & interactive
+
+<table>
+<tr>
+<td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#spider-city"><img src="assets/frames/spider-city.jpg" width="100%" alt="Spider-Man City Swing"></a><br><b>Spider-Man City Swing</b><br><a href="https://x.com/bubbubbdex/status/2113701194187059221">@bubbubbdex</a> · <a href="https://x.com/bubbubbdex/status/2113701194187059221">Original post</a><br><sub>Web swinging, rooftop jumps, and street combat in a Manhattan scene.</sub></td>
+</tr>
+</table>
+
+<a id="video"></a>
+
+## Video workflows
+
+<table>
+<tr>
+<td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#motion-trailer"><img src="assets/frames/motion-trailer.jpg" width="100%" alt="Filmmaking with Renoise"></a><br><b>Filmmaking with Renoise</b><br><a href="https://x.com/renoiseai/status/2113693742163218695">@renoiseai</a> · <a href="https://x.com/renoiseai/status/2113693742163218695">Original post</a><br><sub>Kimi plans shots and edits a film through Renoise MCP.</sub></td>
+</tr>
+</table>
+
+<a id="official"></a>
+
+## Official showcase
+
+<table>
+<tr>
+<td width="33%" valign="top"><a href="https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#official-showcase"><img src="assets/frames/official-showcase.jpg" width="100%" alt="Kimi K3.1 Pro Official Showcase"></a><br><b>Kimi K3.1 Pro Official Showcase</b><br><a href="https://x.com/Kimi_Moonshot/status/2113681863109939271">@Kimi_Moonshot</a> · <a href="https://x.com/Kimi_Moonshot/status/2113681863109939271">Original post</a><br><sub>The video showcase shared by the official Kimi account.</sub></td>
+</tr>
+</table>
 
 ## How to use a prompt
 
-1. Open a work's prompt file and copy the block under **Prompt**.
+1. Open a prompt file and copy the block under **Prompt**.
 2. Paste it into an agent running Kimi K3.1 Pro.
-3. Generate the animation or scene, preview it, and export your video.
+3. Ask it to create the animation or scene, then preview and export the result.
 
 Some creators shared only part of their prompt or described the result in their post; those files say so.
 
@@ -24,4 +85,4 @@ Some creators shared only part of their prompt or described the result in their 
 
 Every video and prompt belongs to its creator, linked from each entry. To request a correction or removal, open an issue.
 
-Watch the full collection on **[SkillU](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)**, or [get video creation skills](https://skillu.dev/skills/) to make your own.
+Browse the full collection on **[SkillU](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)**, or [get video creation skills](https://skillu.dev/skills/) to make your own.

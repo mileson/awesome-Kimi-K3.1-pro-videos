@@ -15,7 +15,11 @@
     "added": "2026-10-24",
     "checked": "2026-10-24",
     "video_index": 1,
-    "frame_ratio": 0.4
+    "frame_ratio": 0.4,
+    "title_en": "Robotic Hand: 2,317 Parts",
+    "description_en": "An interactive 3D website showing a robotic hand being disassembled and reassembled.",
+    "model_evidence_en": "The original post names Kimi K3.1 Pro and describes the robotic hand task.",
+    "note_en": "The creator describes the task but does not share a verbatim prompt. Try it at https://form-01-score.ok.kimi.link"
   },
   {
     "slug": "pelican-bicycle",
@@ -33,7 +37,11 @@
     "added": "2026-10-24",
     "checked": "2026-10-24",
     "video_index": 1,
-    "frame_ratio": 0.4
+    "frame_ratio": 0.4,
+    "title_en": "Pelican Riding a Bicycle",
+    "description_en": "An SVG pelican cycling animation, comparing standard and extreme modes.",
+    "model_evidence_en": "The creator explicitly names Kimi K3.1 Pro.",
+    "note_en": "The original post contains two videos. This entry previews the first; see the post for the mode comparison."
   },
   {
     "slug": "spider-city",
@@ -51,7 +59,11 @@
     "added": "2026-10-24",
     "checked": "2026-10-24",
     "video_index": 1,
-    "frame_ratio": 0.4
+    "frame_ratio": 0.4,
+    "title_en": "Spider-Man City Swing",
+    "description_en": "Web swinging, rooftop jumps, and street combat in a Manhattan scene.",
+    "model_evidence_en": "The original post explicitly names KIMI K3.1 PRO.",
+    "note_en": null
   },
   {
     "slug": "official-showcase",
@@ -69,7 +81,11 @@
     "added": "2026-10-24",
     "checked": "2026-10-24",
     "video_index": 1,
-    "frame_ratio": 0.4
+    "frame_ratio": 0.4,
+    "title_en": "Kimi K3.1 Pro Official Showcase",
+    "description_en": "The video showcase shared by the official Kimi account.",
+    "model_evidence_en": "The official post explicitly names Kimi K3.1 Pro.",
+    "note_en": null
   },
   {
     "slug": "motion-trailer",
@@ -87,7 +103,11 @@
     "added": "2026-10-24",
     "checked": "2026-10-24",
     "video_index": 1,
-    "frame_ratio": 0.4
+    "frame_ratio": 0.4,
+    "title_en": "Filmmaking with Renoise",
+    "description_en": "Kimi plans shots and edits a film through Renoise MCP.",
+    "model_evidence_en": "The creator explicitly names Kimi K3.1 Pro × Renoise MCP.",
+    "note_en": "This workflow uses an external video tool. The 15-second motion graphics prompt in the quoted post belongs to a separate work."
   },
   {
     "slug": "motion-with-intent",
@@ -112,6 +132,10 @@
         "name": "Kinetic Title Video",
         "url": "https://skillu.dev/skills/kinetic-title-video/"
       }
-    ]
+    ],
+    "title_en": "Motion With Intent",
+    "description_en": "A 15-second motion graphics piece exploring rhythm, easing, morphing, and contrast.",
+    "model_evidence_en": "The creator explicitly names Renoise AI × Kimi K3.1 Pro.",
+    "note_en": "Created with Renoise AI."
   }
 ]

@@ -94,40 +94,41 @@ def render(rows):
     tracked=destination+'?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos'
     text = '# Awesome Kimi K3.1 Pro Videos\n\n'
     if ready:
-        text += '[![Kimi K3.1 Pro 视频合集](assets/wall.jpg)]('+tracked+')\n\n'
-    text += '用 **Kimi K3.1 Pro** 制作的动画、3D 场景、游戏与视频，以及创作者分享的提示词和原帖。\n\n挑一个喜欢的作品，复制提示词，交给你的 Agent 试一试。\n\n'
-    text += '**[▶ 在 SkillU 观看全部 '+str(len(rows))+' 个作品]('+tracked+')**\n\n'
-    text += '[English](README.en.md)\n\n'
-    text += f'- **{len(rows)}** 个作品，按类别浏览\n- **{sum(bool(r.get("prompt")) for r in rows)}** 条公开提示词，见 [prompts/](prompts/)\n- 每个作品都附创作者原帖\n\n'
-    text += '## 目录\n\n'
+        text += '[![Kimi K3.1 Pro videos](assets/wall.jpg)]('+tracked+')\n\n'
+    text += 'Videos, animations, 3D scenes, and games made with **Kimi K3.1 Pro**, with prompts shared by their creators and links to the original posts.\n\nPick a video, copy its prompt, and try it with your own agent.\n\n'
+    text += '**[▶ Watch all '+str(len(rows))+' videos on SkillU]('+tracked+')**\n\n'
+    text += f'- **{len(rows)}** videos to browse by category\n- **{sum(bool(r.get("prompt")) for r in rows)}** shared prompts in [prompts/](prompts/)\n- Every entry links to the creator’s original post\n\n'
+    text += '## Contents\n\n'
     for key,zh,en in GROUPS:
         count=sum(MAP[r['category']]==key for r in rows)
-        if count:text += f'- [{zh}](#{key}) · {count}\n'
-    text += '- [使用提示词](#使用提示词)\n- [致谢](#致谢)\n\n'
+        if count:text += f'- [{en}](#{key}) · {count}\n'
+    text += '- [How to use a prompt](#how-to-use-a-prompt)\n- [Credits](#credits)\n\n'
     for key,zh,en in GROUPS:
         group=[r for r in rows if MAP[r['category']]==key]
         if not group:continue
-        text += f'<a id="{key}"></a>\n\n## {zh}\n\n<table>\n'
+        text += f'<a id="{key}"></a>\n\n## {en}\n\n<table>\n'
         for i,row in enumerate(group):
             if i%3==0:text += '<tr>\n'
-            slug=row['slug']; label=html.escape(row['title']);url=row['post_url']
+            slug=row['slug']; label=html.escape(row.get('title_en', row['title']));url=row['post_url']
             card=(config.get('gallery_url')+'?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos#'+slug) if config.get('gallery_url') else url
-            preview=f'<img src="assets/frames/{slug}.jpg" width="100%" alt="{label}">' if row in ready else '观看视频'
-            status={'full':'完整 Prompt','partial':'Prompt 片段','not-shared':'作品说明'}[row['prompt_status']]
-            text+=f'<td width="33%" valign="top"><a href="{card}">{preview}</a><br><b>{label}</b><br><a href="{url}">@{row["author"]}</a> · <a href="prompts/{slug}.md">{status}</a><br><sub>{html.escape(row["description"])}</sub></td>\n'
+            preview=f'<img src="assets/frames/{slug}.jpg" width="100%" alt="{label}">' if row in ready else 'Watch video'
+            status={'full':'Prompt','partial':'Partial prompt','not-shared':'Original post'}[row['prompt_status']]
+            prompt_link = f'prompts/{slug}.md' if row.get('prompt') else url
+            text+=f'<td width="33%" valign="top"><a href="{card}">{preview}</a><br><b>{label}</b><br><a href="{url}">@{row["author"]}</a> · <a href="{prompt_link}">{status}</a><br><sub>{html.escape(row.get("description_en", row["description"]))}</sub></td>\n'
             if i%3==2 or i==len(group)-1:text+='</tr>\n'
         text+='</table>\n\n'
-    text += '## 使用提示词\n\n1. 打开作品的提示词页面，复制 **Prompt** 下的内容。\n2. 粘贴给运行 Kimi K3.1 Pro 的 Agent。\n3. 根据作品需要生成动画或场景，预览并导出视频。\n\n部分创作者只分享了提示词片段，或只在原帖中描述作品，对应页面会注明。\n\n'
-    text += '## 致谢\n\n视频与提示词归各自创作者所有，每个作品均附原帖链接。如需更正或移除作品，请提交 Issue。\n\n'
-    text += '在 **[SkillU 观看完整合集]('+tracked+')**，也可以[获取视频创作 Skill]('+config['skills_url']+')，制作自己的作品。\n'
+    text += '## How to use a prompt\n\n1. Open a prompt file and copy the block under **Prompt**.\n2. Paste it into an agent running Kimi K3.1 Pro.\n3. Ask it to create the animation or scene, then preview and export the result.\n\nSome creators shared only part of their prompt or described the result in their post; those files say so.\n\n'
+    text += '## Credits\n\nEvery video and prompt belongs to its creator, linked from each entry. To request a correction or removal, open an issue.\n\n'
+    text += 'Browse the full collection on **[SkillU]('+tracked+')**, or [get video creation skills]('+config['skills_url']+') to make your own.\n'
     (ROOT/'README.md').write_text(text)
+    (ROOT/'README.en.md').write_text(text)
     for row in rows:
         prompt = row.get('prompt')
-        body = f'# {row["title"]}\n\n[观看原视频]({row["post_url"]}) · [@{row["author"]}](https://x.com/{row["author"]})\n\n'
-        body += f'{row["description"]}\n\n模型依据　{row["model_evidence"]}\n\n'
-        if row.get('note'): body += row['note']+'\n\n'
+        body = f'# {row.get("title_en", row["title"])}\n\n[Watch original video]({row["post_url"]}) · [@{row["author"]}](https://x.com/{row["author"]})\n\n'
+        body += f'{row.get("description_en", row["description"])}\n\n'
+        if row.get('note_en'): body += row['note_en']+'\n\n'
         body += '## Prompt\n\n'
-        body += ('作者公开'+('完整提示词' if row['prompt_status']=='full' else '片段')+'\n\n````text\n'+prompt+'\n````\n\n[提示词来源]('+row['prompt_source']+')\n') if prompt else '作者未在已核对的原帖中公开提示词。\n'
+        body += (('Full prompt shared by the creator' if row['prompt_status']=='full' else 'Prompt excerpt shared by the creator')+'\n\n````text\n'+prompt+'\n````\n\n[Prompt source]('+row['prompt_source']+')\n') if prompt else 'The creator did not share a prompt in the original post.\n'
         (ROOT/'prompts'/(row['slug']+'.md')).write_text(body)
 
 

@@ -1,11 +1,9 @@
-# 蜘蛛侠城市穿行
+# Spider-Man City Swing
 
-[观看原视频](https://x.com/bubbubbdex/status/2113701194187059221) · [@bubbubbdex](https://x.com/bubbubbdex)
+[Watch original video](https://x.com/bubbubbdex/status/2113701194187059221) · [@bubbubbdex](https://x.com/bubbubbdex)
 
-曼哈顿场景中的荡网移动、屋顶跳跃和街头战斗。
-
-模型依据　原帖明确写明 KIMI K3.1 PRO。
+Web swinging, rooftop jumps, and street combat in a Manhattan scene.
 
 ## Prompt
 
-作者未在已核对的原帖中公开提示词。
+The creator did not share a prompt in the original post.

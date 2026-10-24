@@ -1,11 +1,9 @@
-# Kimi K3.1 Pro 官方展示
+# Kimi K3.1 Pro Official Showcase
 
-[观看原视频](https://x.com/Kimi_Moonshot/status/2113681863109939271) · [@Kimi_Moonshot](https://x.com/Kimi_Moonshot)
+[Watch original video](https://x.com/Kimi_Moonshot/status/2113681863109939271) · [@Kimi_Moonshot](https://x.com/Kimi_Moonshot)
 
-Kimi 官方发布的视频展示。
-
-模型依据　官方原帖明确写明 Kimi K3.1 Pro。
+The video showcase shared by the official Kimi account.
 
 ## Prompt
 
-作者未在已核对的原帖中公开提示词。
+The creator did not share a prompt in the original post.
