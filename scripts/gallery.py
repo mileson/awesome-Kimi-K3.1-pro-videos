@@ -124,6 +124,10 @@ def render(rows):
         text+='</table>\n\n'
     text+='## 使用提示词\n\n打开标有完整 Prompt 或 Prompt 片段的作品页，复制作者公开的内容，交给运行 Kimi K3.1 Pro 的 Agent。根据作品需要准备素材和运行环境，再预览、调整与导出。需要额外视频工具的流程会在作品页标注。\n\n'
     text+='[查看 SkillU 的相关 Skill]('+config['skills_url']+') · [网站导出数据](data/site-feed.json)\n\n'
+    text+='## 获取视频创作 Skill\n\n以下为 SkillU 的独立创作工具，可用来制作自己的作品。\n\n| Skill | 用途 | 获取 |\n| --- | --- | --- |\n'
+    for slug,title,purpose in [('kinetic-title-video','Kinetic Title Video','动态标题'),('terminal-typing-video','Terminal Typing Video','终端打字动画'),('pipeline-flow-video','Pipeline Flow Video','流程动画'),('animated-stats-video','Animated Stats Video','数据变化动画')]:
+        text+=f'| [{title}](https://skillu.dev/skills/{slug}/) | {purpose} | [免费下载](https://skillu.dev/api/dl/{slug}) |\n'
+    text+='\n'
     text += '''## 添加作品与重新生成
 
 需要 Python 3.10+、FFmpeg 和 ffprobe。视频缓存在本地 `.cache/`，仓库只保存抽取的预览帧和目录。

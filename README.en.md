@@ -35,3 +35,14 @@ python3 scripts/gallery.py export-site
 ```
 
 The command packages cached videos, frames, the feed and SHA-256 checksums into `.cache/skillu-import.zip` for the website maintainer. It does not upload or publish media automatically.
+
+## Get video creation skills
+
+These are independent SkillU tools for making your own work.
+
+| Skill | Get it |
+| --- | --- |
+| [Kinetic Title Video](https://skillu.dev/skills/kinetic-title-video/) | [Free download](https://skillu.dev/api/dl/kinetic-title-video) |
+| [Terminal Typing Video](https://skillu.dev/skills/terminal-typing-video/) | [Free download](https://skillu.dev/api/dl/terminal-typing-video) |
+| [Pipeline Flow Video](https://skillu.dev/skills/pipeline-flow-video/) | [Free download](https://skillu.dev/api/dl/pipeline-flow-video) |
+| [Animated Stats Video](https://skillu.dev/skills/animated-stats-video/) | [Free download](https://skillu.dev/api/dl/animated-stats-video) |

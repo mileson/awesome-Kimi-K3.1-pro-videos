@@ -79,6 +79,17 @@
 
 [查看 SkillU 的相关 Skill](https://skillu.dev/skills/) · [网站导出数据](data/site-feed.json)
 
+## 获取视频创作 Skill
+
+以下为 SkillU 的独立创作工具，可用来制作自己的作品。
+
+| Skill | 用途 | 获取 |
+| --- | --- | --- |
+| [Kinetic Title Video](https://skillu.dev/skills/kinetic-title-video/) | 动态标题 | [免费下载](https://skillu.dev/api/dl/kinetic-title-video) |
+| [Terminal Typing Video](https://skillu.dev/skills/terminal-typing-video/) | 终端打字动画 | [免费下载](https://skillu.dev/api/dl/terminal-typing-video) |
+| [Pipeline Flow Video](https://skillu.dev/skills/pipeline-flow-video/) | 流程动画 | [免费下载](https://skillu.dev/api/dl/pipeline-flow-video) |
+| [Animated Stats Video](https://skillu.dev/skills/animated-stats-video/) | 数据变化动画 | [免费下载](https://skillu.dev/api/dl/animated-stats-video) |
+
 ## 添加作品与重新生成
 
 需要 Python 3.10+、FFmpeg 和 ffprobe。视频缓存在本地 `.cache/`，仓库只保存抽取的预览帧和目录。
