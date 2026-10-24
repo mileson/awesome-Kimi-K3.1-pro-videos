@@ -89,26 +89,21 @@ def render(rows):
             draw.text((x+12,y+273), f"{i+1:02}  @{row['author']}", fill='white')
         wall.save(ROOT/'assets/wall.jpg', quality=88)
     feed(ROOT, rows)
-    text = '''# Awesome Kimi K3.1 Pro Videos
-
-收集用 Kimi K3.1 Pro 制作的动画、3D 场景与视频，保留作者原帖和公开提示词。点击预览观看原视频。
-
-[English](README.en.md) · [贡献作品](CONTRIBUTING.md) · [目录数据](data/videos.json)
-
-'''
-    text += f"已收录 **{len(rows)}** 个作品，其中 **{sum(bool(r.get('prompt')) for r in rows)}** 个有公开的完整或部分提示词。\n\n"
-    if ready:
-        text += '## 视频帧图片墙\n\n![Kimi K3.1 Pro 视频帧合集](assets/wall.jpg)\n\n'
     config=json.loads((ROOT/'data/site.json').read_text())
     destination=config.get('gallery_url') or config['skills_url']
     tracked=destination+'?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos'
-    text=text.replace('![Kimi K3.1 Pro 视频帧合集](assets/wall.jpg)', '[![Kimi K3.1 Pro 视频帧合集](assets/wall.jpg)]('+tracked+')')
-    text += '[浏览 SkillU 视频合集]('+tracked+')\n\n' if config.get('gallery_url') else '[在 SkillU 浏览可获取的 Skill]('+tracked+')\n\n'
+    text = '# Awesome Kimi K3.1 Pro Videos\n\n'
+    if ready:
+        text += '[![Kimi K3.1 Pro 视频合集](assets/wall.jpg)]('+tracked+')\n\n'
+    text += '用 **Kimi K3.1 Pro** 制作的动画、3D 场景、游戏与视频，以及创作者分享的提示词和原帖。\n\n挑一个喜欢的作品，复制提示词，交给你的 Agent 试一试。\n\n'
+    text += '**[▶ 在 SkillU 观看全部 '+str(len(rows))+' 个作品]('+tracked+')**\n\n'
+    text += '[English](README.en.md)\n\n'
+    text += f'- **{len(rows)}** 个作品，按类别浏览\n- **{sum(bool(r.get("prompt")) for r in rows)}** 条公开提示词，见 [prompts/](prompts/)\n- 每个作品都附创作者原帖\n\n'
     text += '## 目录\n\n'
     for key,zh,en in GROUPS:
         count=sum(MAP[r['category']]==key for r in rows)
         if count:text += f'- [{zh}](#{key}) · {count}\n'
-    text += '- [使用提示词](#使用提示词)\n- [添加作品与重新生成](#添加作品与重新生成)\n\n'
+    text += '- [使用提示词](#使用提示词)\n- [致谢](#致谢)\n\n'
     for key,zh,en in GROUPS:
         group=[r for r in rows if MAP[r['category']]==key]
         if not group:continue
@@ -122,40 +117,9 @@ def render(rows):
             text+=f'<td width="33%" valign="top"><a href="{card}">{preview}</a><br><b>{label}</b><br><a href="{url}">@{row["author"]}</a> · <a href="prompts/{slug}.md">{status}</a><br><sub>{html.escape(row["description"])}</sub></td>\n'
             if i%3==2 or i==len(group)-1:text+='</tr>\n'
         text+='</table>\n\n'
-    text+='## 使用提示词\n\n打开标有完整 Prompt 或 Prompt 片段的作品页，复制作者公开的内容，交给运行 Kimi K3.1 Pro 的 Agent。根据作品需要准备素材和运行环境，再预览、调整与导出。需要额外视频工具的流程会在作品页标注。\n\n'
-    text+='[查看 SkillU 的相关 Skill]('+config['skills_url']+') · [网站导出数据](data/site-feed.json)\n\n'
-    text+='## 获取视频创作 Skill\n\n以下为 SkillU 的独立创作工具，可用来制作自己的作品。\n\n| Skill | 用途 | 获取 |\n| --- | --- | --- |\n'
-    for slug,title,purpose in [('kinetic-title-video','Kinetic Title Video','动态标题'),('terminal-typing-video','Terminal Typing Video','终端打字动画'),('pipeline-flow-video','Pipeline Flow Video','流程动画'),('animated-stats-video','Animated Stats Video','数据变化动画')]:
-        text+=f'| [{title}](https://skillu.dev/skills/{slug}/) | {purpose} | [免费下载](https://skillu.dev/api/dl/{slug}) |\n'
-    text+='\n'
-    text += '''## 添加作品与重新生成
-
-需要 Python 3.10+、FFmpeg 和 ffprobe。视频缓存在本地 `.cache/`，仓库只保存抽取的预览帧和目录。
-
-```sh
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-# 向 data/videos.json 追加条目后，一条命令更新图片墙、README 和提示词页面
-.venv/bin/python scripts/gallery.py build
-# 只处理一个作品；仍会重新生成完整索引
-.venv/bin/python scripts/gallery.py build --only pelican-bicycle
-# 改选该作品的帧位置后重新抽帧
-.venv/bin/python scripts/gallery.py build --only pelican-bicycle --force
-# 不下载视频，只更新文档与已有图片的合集
-.venv/bin/python scripts/gallery.py render
-.venv/bin/python scripts/gallery.py validate
-```
-
-抽帧默认取视频 40% 的位置，可用 `frame_ratio` 调整。多视频原帖通过 `video_index` 选择，从 1 开始。相同来源与帧位置会复用缓存；失败时保留已有图片，命令以非零状态退出并列出失败项。
-
-## 收录规则
-
-作者原帖须明确关联 Kimi K3.1 Pro；保留原始出处。公开完整提示词、公开片段和未公开三种状态分别记录，不从视频反推作者提示词。涉及其他模型的对比视频会在作品页注明。作者自报的效果、耗时和费用不作为统一测评结论。
-
-代码采用 MIT 许可。第三方视频、预览帧、提示词和商标的权利归原作者，不因收录而变为 MIT 许可；需要复用时请查阅原帖许可或联系作者。作品归属或收录有误可提交 Issue 更正或移除。
-
-组织方式参考 [Awesome Opus 5.5 Videos](https://github.com/yihui-dev/awesome-opus5-5-videos)。本项目独立维护。
-'''
+    text += '## 使用提示词\n\n1. 打开作品的提示词页面，复制 **Prompt** 下的内容。\n2. 粘贴给运行 Kimi K3.1 Pro 的 Agent。\n3. 根据作品需要生成动画或场景，预览并导出视频。\n\n部分创作者只分享了提示词片段，或只在原帖中描述作品，对应页面会注明。\n\n'
+    text += '## 致谢\n\n视频与提示词归各自创作者所有，每个作品均附原帖链接。如需更正或移除作品，请提交 Issue。\n\n'
+    text += '在 **[SkillU 观看完整合集]('+tracked+')**，也可以[获取视频创作 Skill]('+config['skills_url']+')，制作自己的作品。\n'
     (ROOT/'README.md').write_text(text)
     for row in rows:
         prompt = row.get('prompt')

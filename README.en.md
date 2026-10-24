@@ -1,20 +1,8 @@
 # Awesome Kimi K3.1 Pro Videos
 
-Watch [the videos on SkillU](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos) or browse [the GitHub gallery](README.md) for Kimi K3.1 Pro animations, 3D scenes, and video workflows. Each entry links to its creator's original X post and records whether a prompt is fully shared, partially shared, or not shared.
+[![Kimi K3.1 Pro videos](assets/wall.jpg)](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)
 
-## Rebuild the gallery
-
-Requires Python 3.10+, FFmpeg and ffprobe on PATH.
-
-```sh
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-.venv/bin/python scripts/gallery.py build
-```
-
-Append an entry to `data/videos.json`, then rebuild. Videos stay in the ignored `.cache/` directory. Extracted frames, `assets/wall.jpg`, the clickable README grid, and prompt pages are generated locally. Unchanged entries reuse cached frames. `--only SLUG` selects an entry, `--force` refreshes its video and frame, and `render` rebuilds documents without network access. Download failures produce a nonzero exit status while preserving existing previews.
-
-Third-party videos, frames, prompts and trademarks remain the property of their respective owners. The MIT license covers the original tooling, not third-party media. See [contribution instructions](CONTRIBUTING.md).
+Watch [the videos on SkillU](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos) or browse [the GitHub gallery](README.md) for Kimi K3.1 Pro animations, 3D scenes, and video workflows. Pick a work, copy the creator’s prompt, and try it with your own agent.
 
 ## Browse by format
 
@@ -24,25 +12,16 @@ Third-party videos, frames, prompts and trademarks remain the property of their 
 - [Video workflows](README.md#video)
 - [Official showcase](README.md#official)
 
-Explore available creation skills on [SkillU](https://skillu.dev/skills/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos). A related Skill is a suggested creation tool, not a claim about the original creator's toolchain.
+## How to use a prompt
 
-## Website integration
+1. Open a work's prompt file and copy the block under **Prompt**.
+2. Paste it into an agent running Kimi K3.1 Pro.
+3. Generate the animation or scene, preview it, and export your video.
 
-`data/site-feed.json` is regenerated with every build. It includes category counts, poster URLs, original posts, prompt availability, and optional related Skill and remake records. The [integration guide](docs/website-integration.md) explains the fields and media handoff.
+Some creators shared only part of their prompt or described the result in their post; those files say so.
 
-```sh
-python3 scripts/gallery.py export-site
-```
+## Credits
 
-The command packages cached videos, frames, the feed and SHA-256 checksums into `.cache/skillu-import.zip` for the website maintainer. It does not upload or publish media automatically.
+Every video and prompt belongs to its creator, linked from each entry. To request a correction or removal, open an issue.
 
-## Get video creation skills
-
-These are independent SkillU tools for making your own work.
-
-| Skill | Get it |
-| --- | --- |
-| [Kinetic Title Video](https://skillu.dev/skills/kinetic-title-video/) | [Free download](https://skillu.dev/api/dl/kinetic-title-video) |
-| [Terminal Typing Video](https://skillu.dev/skills/terminal-typing-video/) | [Free download](https://skillu.dev/api/dl/terminal-typing-video) |
-| [Pipeline Flow Video](https://skillu.dev/skills/pipeline-flow-video/) | [Free download](https://skillu.dev/api/dl/pipeline-flow-video) |
-| [Animated Stats Video](https://skillu.dev/skills/animated-stats-video/) | [Free download](https://skillu.dev/api/dl/animated-stats-video) |
+Watch the full collection on **[SkillU](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)**, or [get video creation skills](https://skillu.dev/skills/) to make your own.

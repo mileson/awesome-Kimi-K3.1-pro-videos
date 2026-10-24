@@ -1,16 +1,18 @@
 # Awesome Kimi K3.1 Pro Videos
 
-收集用 Kimi K3.1 Pro 制作的动画、3D 场景与视频，保留作者原帖和公开提示词。点击预览观看原视频。
+[![Kimi K3.1 Pro 视频合集](assets/wall.jpg)](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)
 
-[English](README.en.md) · [贡献作品](CONTRIBUTING.md) · [目录数据](data/videos.json)
+用 **Kimi K3.1 Pro** 制作的动画、3D 场景、游戏与视频，以及创作者分享的提示词和原帖。
 
-已收录 **6** 个作品，其中 **2** 个有公开的完整或部分提示词。
+挑一个喜欢的作品，复制提示词，交给你的 Agent 试一试。
 
-## 视频帧图片墙
+**[▶ 在 SkillU 观看全部 6 个作品](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)**
 
-[![Kimi K3.1 Pro 视频帧合集](assets/wall.jpg)](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)
+[English](README.en.md)
 
-[浏览 SkillU 视频合集](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)
+- **6** 个作品，按类别浏览
+- **2** 条公开提示词，见 [prompts/](prompts/)
+- 每个作品都附创作者原帖
 
 ## 目录
 
@@ -20,7 +22,7 @@
 - [视频工作流](#video) · 1
 - [官方展示](#official) · 1
 - [使用提示词](#使用提示词)
-- [添加作品与重新生成](#添加作品与重新生成)
+- [致谢](#致谢)
 
 <a id="motion"></a>
 
@@ -75,45 +77,14 @@
 
 ## 使用提示词
 
-打开标有完整 Prompt 或 Prompt 片段的作品页，复制作者公开的内容，交给运行 Kimi K3.1 Pro 的 Agent。根据作品需要准备素材和运行环境，再预览、调整与导出。需要额外视频工具的流程会在作品页标注。
+1. 打开作品的提示词页面，复制 **Prompt** 下的内容。
+2. 粘贴给运行 Kimi K3.1 Pro 的 Agent。
+3. 根据作品需要生成动画或场景，预览并导出视频。
 
-[查看 SkillU 的相关 Skill](https://skillu.dev/skills/) · [网站导出数据](data/site-feed.json)
+部分创作者只分享了提示词片段，或只在原帖中描述作品，对应页面会注明。
 
-## 获取视频创作 Skill
+## 致谢
 
-以下为 SkillU 的独立创作工具，可用来制作自己的作品。
+视频与提示词归各自创作者所有，每个作品均附原帖链接。如需更正或移除作品，请提交 Issue。
 
-| Skill | 用途 | 获取 |
-| --- | --- | --- |
-| [Kinetic Title Video](https://skillu.dev/skills/kinetic-title-video/) | 动态标题 | [免费下载](https://skillu.dev/api/dl/kinetic-title-video) |
-| [Terminal Typing Video](https://skillu.dev/skills/terminal-typing-video/) | 终端打字动画 | [免费下载](https://skillu.dev/api/dl/terminal-typing-video) |
-| [Pipeline Flow Video](https://skillu.dev/skills/pipeline-flow-video/) | 流程动画 | [免费下载](https://skillu.dev/api/dl/pipeline-flow-video) |
-| [Animated Stats Video](https://skillu.dev/skills/animated-stats-video/) | 数据变化动画 | [免费下载](https://skillu.dev/api/dl/animated-stats-video) |
-
-## 添加作品与重新生成
-
-需要 Python 3.10+、FFmpeg 和 ffprobe。视频缓存在本地 `.cache/`，仓库只保存抽取的预览帧和目录。
-
-```sh
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-# 向 data/videos.json 追加条目后，一条命令更新图片墙、README 和提示词页面
-.venv/bin/python scripts/gallery.py build
-# 只处理一个作品；仍会重新生成完整索引
-.venv/bin/python scripts/gallery.py build --only pelican-bicycle
-# 改选该作品的帧位置后重新抽帧
-.venv/bin/python scripts/gallery.py build --only pelican-bicycle --force
-# 不下载视频，只更新文档与已有图片的合集
-.venv/bin/python scripts/gallery.py render
-.venv/bin/python scripts/gallery.py validate
-```
-
-抽帧默认取视频 40% 的位置，可用 `frame_ratio` 调整。多视频原帖通过 `video_index` 选择，从 1 开始。相同来源与帧位置会复用缓存；失败时保留已有图片，命令以非零状态退出并列出失败项。
-
-## 收录规则
-
-作者原帖须明确关联 Kimi K3.1 Pro；保留原始出处。公开完整提示词、公开片段和未公开三种状态分别记录，不从视频反推作者提示词。涉及其他模型的对比视频会在作品页注明。作者自报的效果、耗时和费用不作为统一测评结论。
-
-代码采用 MIT 许可。第三方视频、预览帧、提示词和商标的权利归原作者，不因收录而变为 MIT 许可；需要复用时请查阅原帖许可或联系作者。作品归属或收录有误可提交 Issue 更正或移除。
-
-组织方式参考 [Awesome Opus 5.5 Videos](https://github.com/yihui-dev/awesome-opus5-5-videos)。本项目独立维护。
+在 **[SkillU 观看完整合集](https://skillu.dev/ai-videos/kimi-k3-1-pro/?utm_source=github&utm_medium=readme&utm_campaign=kimi-k3-1-pro-videos)**，也可以[获取视频创作 Skill](https://skillu.dev/skills/)，制作自己的作品。
